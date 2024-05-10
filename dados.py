@@ -17,3 +17,9 @@ key = 'BJXFR5448RHV6Q5UMAWNLTHBF'
 # https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/[location]/[date1]/[date2]?key=YOUR_API_KEY
 
 print(data_fim, timedelta())
+
+URL = join('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/',
+           f'{city}/{data_inicio}/{data_fim}?unitGroup=metric&include=days&key={key}&contentType=csv')
+
+dados = pd.read_csv(URL)
+print(dados.head(3))
